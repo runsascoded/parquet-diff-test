@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+import hashlib
+
 import click
 import json
 import os
 from os import path
-from subprocess import check_output, PIPE, Popen
+from subprocess import PIPE, Popen
 
 import pandas as pd
 from pyarrow.parquet import ParquetFile
@@ -23,7 +25,8 @@ def run(df, compression, engine):
     df.to_parquet(parquet_path, compression=compression, engine=engine)
 
     # Compute sha256sum
-    sha256sum = check_output(['sha256sum', parquet_path]).decode('utf-8').split()[0]
+    with open(parquet_path, 'rb', buffering=0) as f:
+        sha256sum = hashlib.file_digest(f, 'sha256').hexdigest()
 
     # Load metadata via pyarrow
     parquet_file = ParquetFile(parquet_path)

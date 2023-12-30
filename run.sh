@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 pip freeze > pip.txt
 parquet-diff-test
 
