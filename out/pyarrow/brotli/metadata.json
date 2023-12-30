@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "created_by": "parquet-cpp-arrow version 14.0.2",
+    "num_columns": 1,
+    "num_rows": 0,
+    "num_row_groups": 1,
+    "row_groups": [
+      {
+        "num_columns": 1,
+        "num_rows": 0,
+        "total_byte_size": 14,
+        "columns": [
+          {
+            "file_offset": 19,
+            "file_path": "",
+            "physical_type": "INT64",
+            "num_values": 0,
+            "path_in_schema": "a",
+            "is_stats_set": false,
+            "statistics": null,
+            "compression": "BROTLI",
+            "encodings": [
+              "PLAIN",
+              "RLE"
+            ],
+            "has_dictionary_page": true,
+            "dictionary_page_offset": 4,
+            "data_page_offset": 0,
+            "total_compressed_size": 15,
+            "total_uncompressed_size": 14
+          }
+        ]
+      }
+    ],
+    "format_version": "2.6",
+    "serialized_size": 1384
+  },
+  "sha256sum": "1cc13077b67bb42da39f8ba1dbcdac308dab9cf2d25b7169847b58923e02cf91",
+  "size": 1447
+}
