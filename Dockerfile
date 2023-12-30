@@ -8,7 +8,7 @@ ARG email=docker@build
 ARG name=docker
 RUN git config --global user.email "$email" \
  && git config --global user.name "$name"
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+COPY requirements.txt setup.py ./
+RUN pip install -e .
 COPY . .
-ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["parquet-diff-test"]
