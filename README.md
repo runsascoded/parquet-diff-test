@@ -168,3 +168,4 @@ Interestingly, I see the same macOS diffs when running [`run.sh`] in an `ubuntu`
 [`ubuntu..macos`]: https://github.com/runsascoded/parquet-diff-test/compare/ubuntu..macos
 [`ubuntu..windows`]: https://github.com/runsascoded/parquet-diff-test/compare/ubuntu..windows
 [ubuntu..macos xxd]: https://github.com/runsascoded/parquet-diff-test/compare/ubuntu..macos#diff-1aff51203a0bbf705859a61d542f15bfa553b121b30fea500f03024a8ae44258
+[`run.sh`]: run.sh
