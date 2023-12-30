@@ -1,0 +1,22 @@
+image: python:3.11.6
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+cache:
+  paths:
+    - .cache/pip
+before_script:
+  - python --version ; pip --version
+test:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
+  script: |
+    apt-get update -y
+    apt-get install -y xxd
+    git remote set-url origin https://gitlab-ci-token:${PAT}@gitlab.com/$CI_PROJECT_PATH.git
+    git fetch origin ci
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    git config --global user.email "ci@gitlab"
+    git config --global user.name "GitLab CI"
+    ./run.sh
+    git push -f origin HEAD:ci
